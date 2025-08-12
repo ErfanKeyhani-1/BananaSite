@@ -8,111 +8,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fffef7;
-      --ink: #14213d;
-      --accent: #f7c948;
-      --accent-deep: #f4b400;
-      --ok: #2ec27e;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      background: radial-gradient(1200px 800px at 80% -10%, #fff5c2 0%, var(--bg) 45%), var(--bg);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      width: min(920px, 92vw);
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 8px 30px rgba(20,33,61,.12);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: stretch;
-    }
-    @media (max-width: 760px){
-      .card { grid-template-columns: 1fr; }
-      .art { order: -1; }
-    }
-    .copy {
-      padding: 36px 32px 28px 32px;
-    }
-    h1 {
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.05;
-      margin: 0 0 10px 0;
-      letter-spacing: -0.02em;
-    }
-    .tagline { font-weight: 600; opacity: .85; margin: 0 0 12px 0; }
-    .joke { 
-      display: inline-block;
-      font-weight: 800; 
-      font-size: clamp(20px, 2.6vw, 28px);
-      background: linear-gradient(90deg, var(--accent), var(--accent-deep));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      margin: 10px 0 18px 0;
-    }
-    .bullets { margin: 8px 0 18px 0; padding-left: 18px; }
-    .bullets li { margin: 6px 0; }
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border: none;
-      border-radius: 12px;
-      font-weight: 700;
-      background: var(--accent);
-      cursor: pointer;
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-      box-shadow: 0 6px 14px rgba(244,180,0,.35);
-    }
-    .cta:active { transform: translateY(1px) scale(.99); }
-    .cta:hover { background: var(--accent-deep); }
-    .cta small { font-weight: 600; opacity: .85; }
-
-    .art {
-      background: linear-gradient(160deg, #fff7cc, #fff0a6);
-      position: relative;
-      display: grid; place-items: center;
-      min-height: 280px;
-    }
-    .banana {
-      width: 74%; max-width: 420px;
-      aspect-ratio: 1.2 / 1;
-      border-radius: 18px;
-      background: conic-gradient(from 210deg at 60% 40%, #f9d94a 0 60%, #f2b100 60% 100%);
-      position: relative;
-      transform: rotate(-8deg);
-      filter: drop-shadow(0 22px 22px rgba(0,0,0,.12));
-    }
-    .banana:before, .banana:after {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(120px 50px at 70% 72%, rgba(0,0,0,.15), transparent 60%);
-      border-radius: 18px;
-      pointer-events: none;
-    }
-    .banana:after {
-      inset: 10% 8% 18% 8%;
-      background: radial-gradient(80px 40px at 80% 60%, rgba(0,0,0,.18), transparent 60%);
-      mix-blend-mode: multiply; opacity: .4;
-    }
-
-    .note {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-top: 12px; font-size: 14px; opacity: .8;
-    }
-    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--ok); }
-
-    .floaty { position: fixed; left: 0; right: 0; top: 0; pointer-events: none; }
-    .emoji { position: absolute; font-size: 24px; animation: rise 1.2s ease-out forwards; }
-    @keyframes rise { from { transform: translateY(0) scale(.9); opacity: .9; } to { transform: translateY(-90px) scale(1.05); opacity: 0; } }
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;background:radial-gradient(1200px 800px at 80% -10%,#fff5c2 0%,#fffef7 45%),#fffef7;color:#14213d;display:grid;place-items:center;padding:24px}
+    .card{width:min(920px,92vw);border-radius:18px;background:#fff;box-shadow:0 8px 30px rgba(20,33,61,.12);overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch}
+    @media (max-width:760px){.card{grid-template-columns:1fr}.art{order:-1}}
+    .copy{padding:36px 32px 28px 32px}
+    h1{font-size:clamp(32px,4vw,46px);line-height:1.05;margin:0 0 10px 0;letter-spacing:-.02em}
+    .tagline{font-weight:600;opacity:.85;margin:0 0 12px 0}
+    .joke{display:inline-block;font-weight:800;font-size:clamp(20px,2.6vw,28px);background:linear-gradient(90deg,#f7c948,#f4b400);-webkit-background-clip:text;background-clip:text;color:transparent;margin:10px 0 18px 0}
+    .bullets{margin:8px 0 18px 0;padding-left:18px}.bullets li{margin:6px 0}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:none;border-radius:12px;font-weight:700;background:#f7c948;cursor:pointer;transition:transform .08s ease,box-shadow .2s ease,background .2s ease;box-shadow:0 6px 14px rgba(244,180,0,.35)}.cta:active{transform:translateY(1px) scale(.99)}.cta:hover{background:#f4b400}.cta small{font-weight:600;opacity:.85}
+    .art{background:linear-gradient(160deg,#fff7cc,#fff0a6);position:relative;display:grid;place-items:center;min-height:280px}
+    .banana{width:74%;max-width:420px;aspect-ratio:1.2/1;border-radius:18px;background:conic-gradient(from 210deg at 60% 40%,#f9d94a 0 60%,#f2b100 60% 100%);position:relative;transform:rotate(-8deg);filter:drop-shadow(0 22px 22px rgba(0,0,0,.12))}
+    .banana:before,.banana:after{content:"";position:absolute;inset:0;background:radial-gradient(120px 50px at 70% 72%,rgba(0,0,0,.15),transparent 60%);border-radius:18px;pointer-events:none}
+    .banana:after{inset:10% 8% 18% 8%;background:radial-gradient(80px 40px at 80% 60%,rgba(0,0,0,.18),transparent 60%);mix-blend-mode:multiply;opacity:.4}
+    .bank-wrap{position:absolute;right:18px;bottom:18px;text-align:center}
+    .bank-square{width:140px;height:110px;border-radius:14px;background:#ffe168;box-shadow:0 8px 18px rgba(0,0,0,.12)}
+    .bank-label{margin-top:8px;font-weight:800;letter-spacing:.2px}
+    .bank-count{font-size:14px;opacity:.85;margin-top:2px}
+    .eaten-badge{position:absolute;left:50%;transform:translate(-50%,-42px);background:#14213d;color:#fff;font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px;box-shadow:0 6px 14px rgba(0,0,0,.18);white-space:nowrap}
+    .note{display:inline-flex;align-items:center;gap:10px;margin-top:12px;font-size:14px;opacity:.8}
+    .dot{width:8px;height:8px;border-radius:999px;background:#2ec27e}
+    .floaty{position:fixed;left:0;right:0;top:0;pointer-events:none}
+    .emoji{position:absolute;font-size:24px;animation:rise 1.2s ease-out forwards}
+    @keyframes rise{from{transform:translateY(0) scale(.9);opacity:.9}to{transform:translateY(-90px) scale(1.05);opacity:0}}
   </style>
 </head>
 <body>
@@ -130,10 +48,17 @@
         <span>Add to fruit bowl</span>
         <small>🍌 +1</small>
       </button>
-      <div class="note"><span class="dot"></span> Swap one junk snack today for a banana and feel the difference.</div>
+      <div class="note"><span class="dot"></span> Global counter: everyone’s clicks add to today’s total.</div>
     </section>
-    <aside class="art" aria-hidden="true">
+
+    <aside class="art" aria-hidden="false">
       <figure class="banana" title="Banana art"></figure>
+      <div class="bank-wrap" aria-live="polite">
+        <div class="eaten-badge">Bananas today: <span id="eatenCount">0</span></div>
+        <div class="bank-square" aria-label="BannaBank vault"></div>
+        <div class="bank-label">BannaBank</div>
+        <div class="bank-count">Balance: <span id="bankCount">0</span></div>
+      </div>
     </aside>
   </main>
 
@@ -142,26 +67,83 @@
   <script>
     const btn = document.getElementById('cta');
     const floaty = document.getElementById('floaty');
-    function pop(x, y){
+    const eatenEl = document.getElementById('eatenCount');
+    const bankEl = document.getElementById('bankCount');
+
+    function todayISO(){
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,'0');
+      const day = String(d.getDate()).padStart(2,'0');
+      return `${y}-${m}-${day}`;
+    }
+
+    const NS = 'bannabank-mr3';
+    function key(){ return 'bananas-' + todayISO(); }
+    const API = 'https://api.countapi.xyz';
+
+    async function ensureToday(){
+      const k = key();
+      const getRes = await fetch(`${API}/get/${NS}/${k}`).catch(()=>null);
+      if(getRes && getRes.ok){
+        const {value} = await getRes.json();
+        render(value|0); return value|0;
+      }
+      const createRes = await fetch(`${API}/create?namespace=${encodeURIComponent(NS)}&key=${encodeURIComponent(k)}&value=0`).catch(()=>null);
+      if(createRes && createRes.ok){
+        const {value} = await createRes.json();
+        render(value|0); return value|0;
+      }
+      return fallbackLoad();
+    }
+
+    async function hit(){
+      const k = key();
+      try{
+        const r = await fetch(`${API}/hit/${NS}/${k}`);
+        if(r.ok){ const {value} = await r.json(); render(value|0); return value|0; }
+      }catch{}
+      return fallbackHit();
+    }
+
+    function render(n){ eatenEl.textContent = n; bankEl.textContent = n; }
+
+    const LS_DATE='banana_date_global';
+    const LS_CNT='banana_count_global';
+    function fallbackLoad(){
+      const d=todayISO(); const sd=localStorage.getItem(LS_DATE);
+      if(sd!==d){ localStorage.setItem(LS_DATE,d); localStorage.setItem(LS_CNT,'0'); }
+      const v=parseInt(localStorage.getItem(LS_CNT)||'0',10); render(v); return v;
+    }
+    function fallbackHit(){
+      const d=todayISO(); const sd=localStorage.getItem(LS_DATE);
+      if(sd!==d){ localStorage.setItem(LS_DATE,d); localStorage.setItem(LS_CNT,'0'); }
+      const v=(parseInt(localStorage.getItem(LS_CNT)||'0',10)+1); localStorage.setItem(LS_CNT,String(v)); render(v); return v;
+    }
+
+    ensureToday();
+
+    function pop(x,y){
       for(let i=0;i<6;i++){
-        const s = document.createElement('div');
-        s.textContent = '🍌';
-        s.className = 'emoji';
-        const dx = (Math.random() * 120) - 60;
-        s.style.left = (x + dx) + 'px';
-        s.style.top = (y - 12) + 'px';
-        s.style.transform = `translateY(0) rotate(${(Math.random()*30)-15}deg)`;
-        s.style.opacity = 0.95;
-        s.style.fontSize = (20 + Math.random()*14) + 'px';
-        floaty.appendChild(s);
-        setTimeout(()=>s.remove(), 1200);
+        const s=document.createElement('div'); s.textContent='🍌'; s.className='emoji';
+        const dx=(Math.random()*120)-60; s.style.left=(x+dx)+'px'; s.style.top=(y-12)+'px';
+        s.style.transform=`translateY(0) rotate(${(Math.random()*30)-15}deg)`; s.style.opacity=0.95;
+        s.style.fontSize=(20+Math.random()*14)+'px'; floaty.appendChild(s); setTimeout(()=>s.remove(),1200);
       }
     }
-    btn.addEventListener('click', (e)=>{
+
+    btn.addEventListener('click', async ()=>{
       const r = btn.getBoundingClientRect();
       pop(r.left + r.width/2, r.top + window.scrollY);
+      await hit();
       btn.blur();
     });
+
+    let lastDay = todayISO();
+    setInterval(()=>{
+      const now = todayISO();
+      if(now !== lastDay){ lastDay = now; ensureToday(); }
+    }, 60000);
   </script>
 </body>
 </html>
